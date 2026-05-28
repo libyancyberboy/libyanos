@@ -1,0 +1,694 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#08080c" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="العبلي" />
+    <title>العبلي</title>
+    <link rel="apple-touch-icon" href="./assets/icon.png" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <svg class="sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <symbol id="i-back" viewBox="0 0 24 24"><path d="M15 5 8 12l7 7" /></symbol>
+      <symbol id="i-bell" viewBox="0 0 24 24"><path d="M18 9a6 6 0 0 0-12 0c0 7-3 7-3 7h18s-3 0-3-7" /><path d="M10 20a2 2 0 0 0 4 0" /></symbol>
+      <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7" /><path d="m20 20-4.2-4.2" /></symbol>
+      <symbol id="i-share" viewBox="0 0 24 24"><circle cx="18" cy="5" r="3" /><circle cx="6" cy="12" r="3" /><circle cx="18" cy="19" r="3" /><path d="m8.6 10.8 6.8-4.1M8.6 13.2l6.8 4.1" /></symbol>
+      <symbol id="i-heart" viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8Z" /></symbol>
+      <symbol id="i-star" viewBox="0 0 24 24"><path d="m12 3 2.7 5.5 6.1.9-4.4 4.3 1 6.1-5.4-2.9-5.4 2.9 1-6.1-4.4-4.3 6.1-.9L12 3Z" /></symbol>
+      <symbol id="i-image" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2" /><path d="m8 13 2.3-2.3L15 15.5l1.5-1.5L21 18" /><circle cx="8.5" cy="9" r="1.5" /></symbol>
+      <symbol id="i-check" viewBox="0 0 24 24"><path d="m6 12 4 4 8-8" /></symbol>
+      <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="2" /><path d="M8 3v4M16 3v4M4 10h16" /></symbol>
+      <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8" /><path d="M12 8v5l3 2" /></symbol>
+      <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4" /><path d="M4 21a8 8 0 0 1 16 0" /></symbol>
+      <symbol id="i-home" viewBox="0 0 24 24"><path d="M4 11 12 4l8 7v9H6v-7h12" /></symbol>
+      <symbol id="i-booking" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="2" /><path d="M8 3v4M16 3v4M8 12h8M8 16h5" /></symbol>
+      <symbol id="i-sport" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" /><path d="m12 3 3 6-3 3-3-3 3-6ZM5 15l7-3 7 3M8 20l4-8 4 8" /></symbol>
+      <symbol id="i-football" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" /><path d="m12 7 4 3-1.5 4.8h-5L8 10l4-3ZM4.5 10.5 8 10M16 10l3.5.5M9.5 14.8 7.5 19M14.5 14.8l2 4.2M12 7V3.5" /></symbol>
+      <symbol id="i-racket" viewBox="0 0 24 24"><ellipse cx="9" cy="8.5" rx="4.8" ry="6.2" transform="rotate(-28 9 8.5)" /><path d="M12 13.5 20 21M16.5 17.8l-2.8 2.8M7 4.5l3.6 8.4M4.6 7.2l7.1 3.6" /><circle cx="17.8" cy="6.5" r="2.2" /></symbol>
+      <symbol id="i-padbol" viewBox="0 0 24 24"><circle cx="8" cy="8" r="4.6" /><circle cx="16.2" cy="15.7" r="4.8" /><path d="M5 8h6M8 5v6M13 15.7h6.4M16.2 12.5V19" /></symbol>
+      <symbol id="i-dumbbell" viewBox="0 0 24 24"><path d="M4 9v6M7 7v10M10 10v4M14 10v4M17 7v10M20 9v6M10 12h4" /></symbol>
+      <symbol id="i-coach" viewBox="0 0 24 24"><circle cx="9" cy="7" r="3.2" /><path d="M3.5 20a5.5 5.5 0 0 1 11 0M15 8h6M15 12h5M17 16h4" /></symbol>
+      <symbol id="i-players" viewBox="0 0 24 24"><circle cx="8" cy="8" r="3" /><circle cx="16" cy="8" r="3" /><path d="M3 20a5 5 0 0 1 10 0M11 20a5 5 0 0 1 10 0" /></symbol>
+      <symbol id="i-jersey" viewBox="0 0 24 24"><path d="M8 4 5 6 2.8 10 6 12v8h12v-8l3.2-2L19 6l-3-2a4.8 4.8 0 0 1-8 0Z" /><path d="M9 5.2a4.2 4.2 0 0 0 6 0" /></symbol>
+      <symbol id="i-trophy" viewBox="0 0 24 24"><path d="M8 4h8v5a4 4 0 0 1-8 0V4Z" /><path d="M8 6H4v2a4 4 0 0 0 4 4M16 6h4v2a4 4 0 0 1-4 4M12 13v4M8 21h8M10 17h4" /></symbol>
+      <symbol id="i-parking" viewBox="0 0 24 24"><rect x="6" y="4" width="12" height="16" rx="2" /><path d="M10 17V7h4a3 3 0 0 1 0 6h-4" /></symbol>
+      <symbol id="i-light" viewBox="0 0 24 24"><path d="M9 18h6M10 22h4M8 13a5 5 0 1 1 8 0c-1.2 1-1.5 2-1.5 3h-5c0-1-.3-2-1.5-3Z" /></symbol>
+      <symbol id="i-locker" viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="16" rx="2" /><path d="M12 4v16M8 9h1M15 9h1" /></symbol>
+      <symbol id="i-coffee" viewBox="0 0 24 24"><path d="M5 8h11v5a5 5 0 0 1-5 5H10a5 5 0 0 1-5-5V8Z" /><path d="M16 10h2a2 2 0 0 1 0 4h-2M6 21h11M8 4v2M12 4v2M16 4v2" /></symbol>
+      <symbol id="i-toilet" viewBox="0 0 24 24"><path d="M7 21V9a3 3 0 0 1 6 0v12M17 21v-8M15 13h4M17 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4ZM9 4a2 2 0 1 0 0 4 2 2 0 0 0 0-4Z" /></symbol>
+      <symbol id="i-cash" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="2" /><circle cx="12" cy="12" r="3" /><path d="M6 9v6M18 9v6" /></symbol>
+      <symbol id="i-card" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2" /><path d="M3 10h18M7 15h4" /></symbol>
+      <symbol id="i-wallet" viewBox="0 0 24 24"><path d="M4 7h15a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a3 3 0 0 1 3-3h12" /><path d="M17 13h4" /></symbol>
+      <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" /></symbol>
+      <symbol id="i-qr" viewBox="0 0 24 24"><path d="M4 4h6v6H4V4ZM14 4h6v6h-6V4ZM4 14h6v6H4v-6ZM14 14h2v2h-2v-2ZM18 14h2v6h-6v-2h4v-4ZM14 18h2v2h-2v-2Z" /></symbol>
+      <symbol id="i-settings" viewBox="0 0 24 24"><path d="M12 15.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Z" /><path d="M19.4 15a1.8 1.8 0 0 0 .4 2l.1.1-2 3.4-.2-.1a1.8 1.8 0 0 0-2.1.5l-.1.1h-4l-.1-.1a1.8 1.8 0 0 0-2.1-.5l-.2.1-2-3.4.1-.1a1.8 1.8 0 0 0 .4-2L7.5 15l-2-1.2v-3.6l2-1.2.1-.1a1.8 1.8 0 0 0-.4-2l-.1-.1 2-3.4.2.1a1.8 1.8 0 0 0 2.1-.5l.1-.1h4l.1.1a1.8 1.8 0 0 0 2.1.5l.2-.1 2 3.4-.1.1a1.8 1.8 0 0 0-.4 2l.1.1 2 1.2v3.6l-2 1.2Z" /></symbol>
+      <symbol id="i-logout" viewBox="0 0 24 24"><path d="M10 17 15 12l-5-5M15 12H3" /><path d="M14 4h4a3 3 0 0 1 3 3v10a3 3 0 0 1-3 3h-4" /></symbol>
+      <symbol id="i-phone" viewBox="0 0 24 24"><rect x="7" y="3" width="10" height="18" rx="2" /><path d="M11 18h2" /></symbol>
+      <symbol id="i-edit" viewBox="0 0 24 24"><path d="M12 20h9" /><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4 12.5-12.5Z" /></symbol>
+      <symbol id="i-map" viewBox="0 0 24 24"><path d="M9 18 3 21V6l6-3 6 3 6-3v15l-6 3-6-3Z" /><path d="M9 3v15M15 6v15" /></symbol>
+    </svg>
+
+    <main class="app-shell" id="appShell">
+      <section class="screen auth-screen active" data-screen="login">
+        <div class="status auth-status">
+          <span>9:41</span>
+          <div class="phone-status"><i></i><i></i><i></i></div>
+        </div>
+        <section class="auth-hero">
+          <div class="auth-logo">
+            <span class="brand-mark"><i></i><b></b></span>
+            <div>
+              <h1>العبلي</h1>
+              <p>دخول سريع لحجز الملاعب والنوادي</p>
+            </div>
+          </div>
+          <div class="auth-kpis">
+            <span><b>24/7</b>حجز</span>
+            <span><b>+60</b>ملعب</span>
+            <span><b>QR</b>تذكرة</span>
+          </div>
+        </section>
+
+        <form class="auth-card" data-login-form>
+          <span class="form-eyebrow">تسجيل دخول</span>
+          <h2>ادخل برقم هاتفك</h2>
+          <label class="field-control">
+            <span>رقم الهاتف</span>
+            <div>
+              <svg><use href="#i-phone"></use></svg>
+              <input name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="09XXXXXXXX" required />
+            </div>
+          </label>
+          <label class="field-control">
+            <span>اسمك</span>
+            <div>
+              <svg><use href="#i-user"></use></svg>
+              <input name="name" type="text" autocomplete="name" placeholder="أحمد اللافي" />
+            </div>
+          </label>
+          <button class="primary-action" type="submit">دخول التطبيق</button>
+          <button class="ghost-action" type="button" data-demo-login>دخول تجريبي سريع</button>
+          <p>سيتم حفظ بياناتك على هذا الهاتف فقط.</p>
+        </form>
+      </section>
+
+      <section class="screen home-screen" data-screen="home">
+        <div class="green-header">
+          <div class="status">
+            <span>9:41</span>
+            <div class="phone-status"><i></i><i></i><i></i></div>
+          </div>
+          <header class="brand-bar">
+            <button class="bell-button" type="button" aria-label="الإشعارات" data-toast="عندك إشعارين">
+              <svg><use href="#i-bell"></use></svg>
+              <b>2</b>
+            </button>
+            <div class="brand" aria-label="شعار العبلي">
+              <span class="brand-mark">
+                <i></i>
+                <b></b>
+              </span>
+              <div>
+                <h1>العبلي</h1>
+                <p>احجز ملعبك</p>
+              </div>
+            </div>
+            <span class="header-spacer" aria-hidden="true"></span>
+          </header>
+        </div>
+
+        <section class="home-content">
+          <section class="ad-board" aria-label="إعلانات العبلي المصورة">
+            <div class="ad-track" data-ad-track>
+              <article class="ad-slide">
+                <img src="./assets/hero-fast.jpg" alt="" decoding="async" fetchpriority="high" />
+                <div class="ad-copy">
+                  <span>إعلان مميز</span>
+                  <h2>احجز ملعبك الليلة</h2>
+                  <p>خصم 20% على أول حجز في طرابلس</p>
+                </div>
+              </article>
+              <article class="ad-slide">
+                <img src="./assets/ref-padel-one-fast.jpg" alt="" loading="lazy" decoding="async" />
+                <div class="ad-copy">
+                  <span>بادل قريب منك</span>
+                  <h2>ملاعب جاهزة الآن</h2>
+                  <p>اختار الوقت وادفع كاش أو ليبيا باي</p>
+                </div>
+              </article>
+              <article class="ad-slide">
+                <img src="./assets/gym-card-fast.jpg" alt="" loading="lazy" decoding="async" />
+                <div class="ad-copy">
+                  <span>لياقة وتدريب</span>
+                  <h2>حصص وجيمات</h2>
+                  <p>اشترك في classes أو احجز مدرب خاص</p>
+                </div>
+              </article>
+              <article class="ad-slide">
+                <img src="./assets/ref-football-card-fast.jpg" alt="" loading="lazy" decoding="async" />
+                <div class="ad-copy">
+                  <span>مباراة مفتوحة</span>
+                  <h2>كمل فريقك اليوم</h2>
+                  <p>انضم لمباراة قريبة أو ابحث عن لاعب ناقص</p>
+                </div>
+              </article>
+              <article class="ad-slide">
+                <img src="./assets/coach-card-fast.jpg" alt="" loading="lazy" decoding="async" />
+                <div class="ad-copy">
+                  <span>مدرب خاص</span>
+                  <h2>طور مستواك</h2>
+                  <p>احجز جلسة تدريب فردية بخطة واضحة</p>
+                </div>
+              </article>
+            </div>
+            <div class="ad-dots" aria-hidden="true">
+              <button class="active" type="button" data-ad-dot="0"></button>
+              <button type="button" data-ad-dot="1"></button>
+              <button type="button" data-ad-dot="2"></button>
+              <button type="button" data-ad-dot="3"></button>
+              <button type="button" data-ad-dot="4"></button>
+            </div>
+          </section>
+
+          <section class="welcome">
+            <p data-profile-greeting>مرحباً أحمد</p>
+            <h2>جاهز للعب اليوم؟ <span>👋</span></h2>
+            <small>اكتشف الملاعب، احجز بسهولة، واستمتع باللعب</small>
+          </section>
+
+          <label class="search-box">
+            <input type="search" placeholder="إبحث عن ملعب أو نادي..." />
+            <svg><use href="#i-search"></use></svg>
+          </label>
+
+          <section class="section-row">
+            <h3>اختر رياضتك</h3>
+          </section>
+
+          <section class="sports-grid">
+            <button class="sport-card active" type="button" data-filter="ملاعب كرة قدم">
+              <span class="sport-icon"><svg><use href="#i-football"></use></svg></span>
+              <span>ملاعب كرة قدم</span>
+            </button>
+            <button class="sport-card" type="button" data-filter="بادل">
+              <span class="sport-icon"><svg><use href="#i-racket"></use></svg></span>
+              <span>بادل</span>
+            </button>
+            <button class="sport-card" type="button" data-filter="بادبول">
+              <span class="sport-icon"><svg><use href="#i-padbol"></use></svg></span>
+              <span>بادبول</span>
+            </button>
+            <button class="sport-card" type="button" data-filter="صالة رياضية">
+              <span class="sport-icon"><svg><use href="#i-dumbbell"></use></svg></span>
+              <span>صالة رياضية</span>
+            </button>
+            <button class="sport-card" type="button" data-filter="مدربون">
+              <span class="sport-icon"><svg><use href="#i-coach"></use></svg></span>
+              <span>مدربون</span>
+            </button>
+            <button class="sport-card" type="button" data-filter="بطولات">
+              <span class="sport-icon"><svg><use href="#i-trophy"></use></svg></span>
+              <span>بطولات</span>
+            </button>
+            <button class="sport-card" type="button" data-filter="مباريات مفتوحة">
+              <span class="sport-icon"><svg><use href="#i-players"></use></svg></span>
+              <span>مباريات مفتوحة</span>
+            </button>
+            <button class="sport-card" type="button" data-filter="فرق رياضية">
+              <span class="sport-icon"><svg><use href="#i-jersey"></use></svg></span>
+              <span>فرق رياضية</span>
+            </button>
+          </section>
+
+          <section class="nearby-head">
+            <button type="button" data-tab-target="details">عرض الكل</button>
+            <h3>ملاعب قريبة منك</h3>
+          </section>
+
+          <section class="venue-grid">
+            <article class="venue-card" data-open-details>
+              <div class="venue-photo">
+                <img src="./assets/ref-padel-one-fast.jpg" alt="" loading="lazy" decoding="async" />
+                <span><svg><use href="#i-star"></use></svg>4.7</span>
+              </div>
+              <h4>Padel One</h4>
+              <p>طرابلس - حي الأندلس</p>
+              <small>3.2 كم</small>
+            </article>
+            <article class="venue-card" data-open-details>
+              <div class="venue-photo">
+                <img src="./assets/ref-football-card-fast.jpg" alt="" loading="lazy" decoding="async" />
+                <span><svg><use href="#i-star"></use></svg>4.6</span>
+              </div>
+              <h4>ملعب النصر</h4>
+              <p>طرابلس - حي الأندلس</p>
+              <small>1.8 كم</small>
+            </article>
+          </section>
+        </section>
+      </section>
+
+      <section class="screen clubs-screen" data-screen="clubs">
+        <div class="clubs-header">
+          <div class="status">
+            <span>9:41</span>
+            <div class="phone-status"><i></i><i></i><i></i></div>
+          </div>
+          <section class="clubs-title">
+            <span>العبلي</span>
+            <h1>النوادي الرياضية</h1>
+            <p>صالات، أكاديميات، ملاعب تدريب، ومدربين قريبين منك</p>
+          </section>
+        </div>
+
+        <section class="clubs-content">
+          <label class="search-box clubs-search">
+            <input type="search" placeholder="إبحث عن نادي أو صالة أو أكاديمية..." />
+            <svg><use href="#i-search"></use></svg>
+          </label>
+
+          <section class="club-filter-row">
+            <button class="active" type="button" data-toast="تم عرض كل النوادي">الكل</button>
+            <button type="button" data-toast="صالات رياضية">جيم</button>
+            <button type="button" data-toast="أكاديميات كرة قدم">أكاديميات</button>
+            <button type="button" data-toast="ملاعب تدريب">تدريب</button>
+          </section>
+
+          <article class="club-hero-card">
+            <img src="./assets/gym-card-fast.jpg" alt="" loading="lazy" decoding="async" />
+            <div>
+              <span>عضوية شهرية</span>
+              <h2>نادي القوة الرياضي</h2>
+              <p>جيم، حصص لياقة، ومدربين خاصين في حي الأندلس</p>
+              <button type="button" data-toast="تم فتح عضوية النادي">عرض العضوية</button>
+            </div>
+          </article>
+
+          <section class="section-row clubs-row-title">
+            <h3>نوادي مقترحة</h3>
+          </section>
+
+          <section class="club-list">
+            <article class="club-item">
+              <img src="./assets/hero-fast.jpg" alt="" loading="lazy" decoding="async" />
+              <div>
+                <h3>نادي النصر للتدريب</h3>
+                <p>ملعب، بادل، وصالة لياقة</p>
+                <small><svg><use href="#i-star"></use></svg>4.8 · 1.5 كم</small>
+              </div>
+              <button type="button" data-tab-target="details">فتح</button>
+            </article>
+            <article class="club-item">
+              <img src="./assets/ref-padel-one-fast.jpg" alt="" loading="lazy" decoding="async" />
+              <div>
+                <h3>Padel One Club</h3>
+                <p>ملاعب بادل وحصص مبتدئين</p>
+                <small><svg><use href="#i-star"></use></svg>4.7 · 3.2 كم</small>
+              </div>
+              <button type="button" data-toast="تم فتح نادي البادل">فتح</button>
+            </article>
+            <article class="club-item">
+              <img src="./assets/coach-card-fast.jpg" alt="" loading="lazy" decoding="async" />
+              <div>
+                <h3>أكاديمية اللاعب</h3>
+                <p>تدريب ناشئين وخطط لياقة</p>
+                <small><svg><use href="#i-star"></use></svg>4.9 · 2.4 كم</small>
+              </div>
+              <button type="button" data-toast="تم فتح الأكاديمية">فتح</button>
+            </article>
+          </section>
+        </section>
+      </section>
+
+      <section class="screen details-screen" data-screen="details">
+        <div class="status dark-status">
+          <span>9:41</span>
+          <div class="phone-status"><i></i><i></i><i></i></div>
+        </div>
+        <header class="top-nav">
+          <button type="button" data-tab-target="home" aria-label="رجوع"><svg><use href="#i-back"></use></svg></button>
+          <h2>تفاصيل الملعب</h2>
+          <div>
+            <button type="button" aria-label="مشاركة" data-toast="تم تجهيز رابط المشاركة"><svg><use href="#i-share"></use></svg></button>
+            <button type="button" aria-label="المفضلة" data-toast="تمت إضافة الملعب للمفضلة"><svg><use href="#i-heart"></use></svg></button>
+          </div>
+        </header>
+
+        <section class="details-hero">
+          <img src="./assets/ref-detail-field-fast.jpg" alt="" decoding="async" />
+          <span><b>17/10</b><svg><use href="#i-image"></use></svg></span>
+        </section>
+
+        <section class="venue-summary">
+          <div class="rating-line">
+            <span><svg><use href="#i-star"></use></svg>4.8</span>
+            <small>(120)</small>
+            <b><svg><use href="#i-check"></use></svg></b>
+          </div>
+          <h1>ملعب النصر</h1>
+          <p>طرابلس - حي الأندلس</p>
+
+          <div class="amenities">
+            <span><svg><use href="#i-light"></use></svg><b>إضاءة ليلية</b></span>
+            <span><svg><use href="#i-parking"></use></svg><b>مواقف سيارات</b></span>
+            <span><svg><use href="#i-locker"></use></svg><b>غرفة تبديل</b></span>
+            <span><svg><use href="#i-coffee"></use></svg><b>مقهى</b></span>
+            <span><svg><use href="#i-toilet"></use></svg><b>دورات مياه</b></span>
+          </div>
+        </section>
+
+        <section class="time-section">
+          <h3>الأوقات المتاحة</h3>
+          <div class="date-row">
+            <button type="button" class="calendar" data-toast="تم فتح التقويم"><svg><use href="#i-calendar"></use></svg></button>
+            <button type="button"><span>الجمعة</span><b>23 مايو</b></button>
+            <button type="button" class="active"><span>السبت</span><b>24 مايو</b></button>
+            <button type="button"><span>الأحد</span><b>25 مايو</b></button>
+            <button type="button"><span>الإثنين</span><b>26 مايو</b></button>
+            <button type="button"><span>الثلاثاء</span><b>27 مايو</b></button>
+          </div>
+          <div class="time-grid">
+            <button type="button">18:00 - 19:00</button>
+            <button type="button" class="active">19:00 - 20:00</button>
+            <button type="button">20:00 - 21:00</button>
+            <button type="button">21:00 - 22:00</button>
+            <button type="button">22:00 - 23:00</button>
+          </div>
+        </section>
+
+        <section class="booking-bar">
+          <div><b>125 د.ل</b><span>للساعة واحدة</span></div>
+          <button type="button" data-tab-target="checkout"><svg><use href="#i-back"></use></svg>احجز الآن</button>
+        </section>
+      </section>
+
+      <section class="screen checkout-screen" data-screen="checkout">
+        <div class="status dark-status">
+          <span>9:41</span>
+          <div class="phone-status"><i></i><i></i><i></i></div>
+        </div>
+        <header class="top-nav checkout-nav">
+          <button type="button" data-tab-target="details" aria-label="رجوع"><svg><use href="#i-back"></use></svg></button>
+          <h2>إتمام الحجز</h2>
+          <span></span>
+        </header>
+
+        <section class="checkout-card">
+          <div class="checkout-field">
+            <img src="./assets/ref-checkout-field-fast.jpg" alt="" decoding="async" />
+            <div>
+              <h3>ملعب النصر</h3>
+              <p>طرابلس - حي الأندلس</p>
+            </div>
+          </div>
+          <div class="booking-info">
+            <span><svg><use href="#i-calendar"></use></svg><b>السبت، 24 مايو 2025</b></span>
+            <span><svg><use href="#i-clock"></use></svg><b>19:00 - 20:00</b></span>
+            <span><svg><use href="#i-clock"></use></svg><b>ساعة واحدة</b></span>
+            <span><svg><use href="#i-user"></use></svg><b>ملعب كامل</b></span>
+          </div>
+        </section>
+
+        <section class="payment-section">
+          <h3>طريقة الدفع</h3>
+          <button class="payment active" type="button">
+            <span><svg><use href="#i-check"></use></svg></span>
+            <b>الدفع نقداً</b>
+            <svg><use href="#i-cash"></use></svg>
+          </button>
+          <button class="payment" type="button">
+            <span></span>
+            <b>بطاقة مصرفية</b>
+            <svg><use href="#i-card"></use></svg>
+          </button>
+          <button class="payment" type="button">
+            <span></span>
+            <b>الدفع عبر ليبيا باي</b>
+            <em>Pay</em>
+          </button>
+          <button class="payment" type="button">
+            <span></span>
+            <b>المحفظة الإلكترونية</b>
+            <svg class="orange"><use href="#i-wallet"></use></svg>
+          </button>
+        </section>
+
+        <section class="total-card">
+          <div><b>الإجمالي</b><strong>125 د.ل</strong></div>
+          <button type="button" data-confirm-booking>تأكيد الحجز</button>
+        </section>
+
+        <section class="success-card">
+          <h3><svg><use href="#i-check"></use></svg>تم تأكيد الحجز بنجاح!</h3>
+          <p>تذكرة QR الخاصة بك</p>
+          <img src="./assets/ref-qr.png" alt="" />
+          <small>رقم الحجز: #ARL-2025-0524-8931</small>
+        </section>
+      </section>
+
+      <section class="screen simple-screen bookings-screen" data-screen="bookings">
+        <div class="status dark-status">
+          <span>9:41</span>
+          <div class="phone-status"><i></i><i></i><i></i></div>
+        </div>
+        <header class="simple-header">
+          <div>
+            <span>حجوزاتي</span>
+            <h1>مواعيدك الجاهزة</h1>
+          </div>
+          <button type="button" data-tab-target="details"><svg><use href="#i-plus"></use></svg></button>
+        </header>
+
+        <section class="simple-content">
+          <article class="booking-ticket current-ticket">
+            <div class="ticket-photo">
+              <img src="./assets/ref-checkout-field-fast.jpg" alt="" loading="lazy" decoding="async" />
+              <span>مؤكد</span>
+            </div>
+            <div class="ticket-body">
+              <h2>ملعب النصر</h2>
+              <p>السبت، 24 مايو - 19:00</p>
+              <div class="ticket-actions">
+                <button type="button" data-tab-target="checkout"><svg><use href="#i-qr"></use></svg>التذكرة</button>
+                <button type="button" data-toast="تم إرسال طلب الإلغاء"><svg><use href="#i-clock"></use></svg>إلغاء</button>
+              </div>
+            </div>
+          </article>
+
+          <section class="mini-stats">
+            <article><b>3</b><span>حجوزات</span></article>
+            <article><b>2</b><span>مباريات</span></article>
+            <article><b>125</b><span>نقاط</span></article>
+          </section>
+
+          <article class="list-card">
+            <span><svg><use href="#i-dumbbell"></use></svg></span>
+            <div>
+              <h3>حصة لياقة</h3>
+              <p>نادي القوة الرياضي - غداً 18:30</p>
+            </div>
+            <button type="button" data-toast="تم فتح تفاصيل الحصة">فتح</button>
+          </article>
+
+          <article class="list-card">
+            <span><svg><use href="#i-racket"></use></svg></span>
+            <div>
+              <h3>حجز بادل</h3>
+              <p>Padel One - الخميس 21:00</p>
+            </div>
+            <button type="button" data-toast="تم فتح حجز البادل">فتح</button>
+          </article>
+        </section>
+      </section>
+
+      <section class="screen simple-screen matches-screen" data-screen="matches">
+        <div class="status dark-status">
+          <span>9:41</span>
+          <div class="phone-status"><i></i><i></i><i></i></div>
+        </div>
+        <header class="simple-header">
+          <div>
+            <span>المجتمع</span>
+            <h1>مباريات مفتوحة</h1>
+          </div>
+          <button type="button" data-toast="تم إنشاء مباراة تجريبية"><svg><use href="#i-plus"></use></svg></button>
+        </header>
+
+        <section class="simple-content">
+          <article class="match-card featured-match">
+            <img src="./assets/ref-football-card-fast.jpg" alt="" loading="lazy" decoding="async" />
+            <div>
+              <span>ينقصهم لاعبين</span>
+              <h2>مباراة ودية في ملعب النصر</h2>
+              <p>اليوم 20:00 - 7 لاعبين مسجلين</p>
+              <button type="button" data-toast="تم إرسال طلب الانضمام"><svg><use href="#i-players"></use></svg>انضمام</button>
+            </div>
+          </article>
+
+          <section class="match-list">
+            <article>
+              <span><svg><use href="#i-football"></use></svg></span>
+              <div>
+                <h3>فريق يبحث عن حارس</h3>
+                <p>طرابلس - حي الأندلس</p>
+              </div>
+              <button type="button" data-toast="تم فتح تفاصيل الفريق">فتح</button>
+            </article>
+            <article>
+              <span><svg><use href="#i-trophy"></use></svg></span>
+              <div>
+                <h3>بطولة نهاية الأسبوع</h3>
+                <p>8 فرق - التسجيل مفتوح</p>
+              </div>
+              <button type="button" data-toast="تم فتح البطولة">فتح</button>
+            </article>
+            <article>
+              <span><svg><use href="#i-jersey"></use></svg></span>
+              <div>
+                <h3>دعوة لفريقك</h3>
+                <p>أكمل بيانات فريقك واستقبل لاعبين</p>
+              </div>
+              <button type="button" data-toast="تم فتح دعوات الفريق">فتح</button>
+            </article>
+          </section>
+        </section>
+      </section>
+
+      <section class="screen simple-screen profile-screen" data-screen="profile">
+        <div class="status dark-status">
+          <span>9:41</span>
+          <div class="phone-status"><i></i><i></i><i></i></div>
+        </div>
+        <header class="simple-header">
+          <div>
+            <span>الملف الشخصي</span>
+            <h1 data-profile-name>أحمد اللافي</h1>
+          </div>
+          <button type="button" data-tab-target="edit-profile"><svg><use href="#i-edit"></use></svg></button>
+        </header>
+
+        <section class="simple-content">
+          <article class="profile-card">
+            <div class="profile-avatar"><svg><use href="#i-user"></use></svg></div>
+            <div>
+              <h2 data-profile-sport>لاعب كرة قدم</h2>
+              <p><span data-profile-city>طرابلس</span> · <span data-profile-phone>09XXXXXXXX</span></p>
+            </div>
+          </article>
+
+          <section class="mini-stats profile-stats">
+            <article><b>18</b><span>مباراة</span></article>
+            <article><b>9</b><span>حجوزات</span></article>
+            <article><b>4.8</b><span>تقييم</span></article>
+          </section>
+
+          <article class="list-card">
+            <span><svg><use href="#i-edit"></use></svg></span>
+            <div>
+              <h3>تعديل البيانات</h3>
+              <p>الاسم، الهاتف، المدينة، الرياضة، والمستوى</p>
+            </div>
+            <button type="button" data-tab-target="edit-profile">تعديل</button>
+          </article>
+
+          <article class="list-card">
+            <span><svg><use href="#i-wallet"></use></svg></span>
+            <div>
+              <h3>المحفظة والدفع</h3>
+              <p>كاش، بطاقة، ليبيا باي</p>
+            </div>
+            <button type="button" data-toast="تم فتح طرق الدفع">فتح</button>
+          </article>
+
+          <article class="list-card">
+            <span><svg><use href="#i-logout"></use></svg></span>
+            <div>
+              <h3>تسجيل الخروج</h3>
+              <p>إنهاء الجلسة الحالية</p>
+            </div>
+            <button type="button" data-logout>خروج</button>
+          </article>
+        </section>
+      </section>
+
+      <section class="screen simple-screen edit-profile-screen" data-screen="edit-profile">
+        <div class="status dark-status">
+          <span>9:41</span>
+          <div class="phone-status"><i></i><i></i><i></i></div>
+        </div>
+        <header class="simple-header">
+          <div>
+            <span>الإعدادات</span>
+            <h1>تعديل الملف</h1>
+          </div>
+          <button type="button" data-tab-target="profile"><svg><use href="#i-back"></use></svg></button>
+        </header>
+
+        <form class="profile-form simple-content" data-profile-form>
+          <label class="field-control">
+            <span>الاسم الكامل</span>
+            <div>
+              <svg><use href="#i-user"></use></svg>
+              <input name="name" type="text" autocomplete="name" placeholder="أحمد اللافي" required />
+            </div>
+          </label>
+          <label class="field-control">
+            <span>رقم الهاتف</span>
+            <div>
+              <svg><use href="#i-phone"></use></svg>
+              <input name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="09XXXXXXXX" required />
+            </div>
+          </label>
+          <label class="field-control">
+            <span>المدينة</span>
+            <div>
+              <svg><use href="#i-map"></use></svg>
+              <input name="city" type="text" placeholder="طرابلس" />
+            </div>
+          </label>
+          <label class="field-control">
+            <span>رياضتك الأساسية</span>
+            <div>
+              <svg><use href="#i-football"></use></svg>
+              <select name="sport">
+                <option>لاعب كرة قدم</option>
+                <option>لاعب بادل</option>
+                <option>مدرب</option>
+                <option>لاعب بادبول</option>
+                <option>لياقة وجيم</option>
+              </select>
+            </div>
+          </label>
+          <label class="field-control">
+            <span>المركز / المستوى</span>
+            <div>
+              <svg><use href="#i-trophy"></use></svg>
+              <input name="level" type="text" placeholder="متوسط · جناح أيمن" />
+            </div>
+          </label>
+          <section class="edit-toggles">
+            <label><input name="notifications" type="checkbox" checked /> إشعارات الحجوزات</label>
+            <label><input name="publicProfile" type="checkbox" checked /> ملفي ظاهر للاعبين</label>
+          </section>
+          <button class="primary-action" type="submit">حفظ التعديلات</button>
+          <button class="ghost-action" type="button" data-tab-target="profile">إلغاء</button>
+        </form>
+      </section>
+    </main>
+
+    <nav class="bottom-nav" id="bottomNav" aria-label="التنقل">
+      <button type="button" data-tab-target="profile"><svg><use href="#i-user"></use></svg><span>الملف</span></button>
+      <button type="button" data-tab-target="bookings"><svg><use href="#i-booking"></use></svg><span>الحجوزات</span></button>
+      <button type="button" data-tab-target="matches"><svg><use href="#i-trophy"></use></svg><span>المباريات</span></button>
+      <button type="button" data-tab-target="clubs"><svg><use href="#i-sport"></use></svg><span>النوادي</span></button>
+      <button class="active" type="button" data-tab-target="home"><svg><use href="#i-home"></use></svg><span>الملاعب</span></button>
+    </nav>
+
+    <div class="toast" id="toast" role="status"></div>
+    <script src="./main.js"></script>
+  </body>
+</html>

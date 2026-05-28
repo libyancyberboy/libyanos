@@ -1,0 +1,20 @@
+{
+  "name": "العبلي",
+  "short_name": "العبلي",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#050506",
+  "theme_color": "#d8ff3f",
+  "icons": [
+    {
+      "src": "./assets/icon.png",
+      "sizes": "192x192 512x512 1024x1024",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "description": "تطبيق العبلي لحجز الملاعب والنوادي الرياضية",
+  "lang": "ar",
+  "dir": "rtl"
+}

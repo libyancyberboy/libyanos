@@ -1,0 +1,12 @@
+{
+  "appId": "ly.alabli.app",
+  "appName": "العبلي",
+  "webDir": "web",
+  "bundledWebRuntime": false,
+  "ios": {
+    "contentInset": "always"
+  },
+  "server": {
+    "iosScheme": "alabli"
+  }
+}
