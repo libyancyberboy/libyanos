@@ -198,20 +198,11 @@ svg {
 .auth-logo .brand-mark {
   width: 70px;
   height: 70px;
-  border-radius: 18px;
+  border-radius: 21px;
 }
 
-.auth-logo .brand-mark::before {
-  width: 43px;
-  height: 27px;
-  border-width: 6px;
-}
-
-.auth-logo .brand-mark::after {
-  right: 15px;
-  bottom: 15px;
-  width: 11px;
-  height: 11px;
+.auth-logo .brand-mark i {
+  inset: 5px;
 }
 
 .auth-logo h1 {
@@ -540,44 +531,60 @@ svg {
   display: grid;
   place-items: center;
   overflow: hidden;
-  border: 1px solid rgba(216, 255, 63, 0.36);
-  border-radius: 11px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 15px;
   background:
-    radial-gradient(circle at 68% 28%, rgba(216, 255, 63, 0.25), transparent 22%),
-    linear-gradient(145deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.025)),
-    #1f1e2c;
+    radial-gradient(circle at 70% 16%, rgba(216, 255, 63, 0.26), transparent 31%),
+    radial-gradient(circle at 16% 90%, rgba(255, 111, 29, 0.18), transparent 34%),
+    linear-gradient(145deg, rgba(255, 255, 255, 0.22), rgba(255, 255, 255, 0.045)),
+    rgba(22, 21, 32, 0.88);
   box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.18),
-    0 14px 28px rgba(0, 0, 0, 0.32),
-    0 0 26px rgba(216, 255, 63, 0.12);
+    inset 0 1px 0 rgba(255, 255, 255, 0.36),
+    inset 0 -18px 28px rgba(0, 0, 0, 0.24),
+    0 16px 32px rgba(0, 0, 0, 0.38),
+    0 0 30px rgba(216, 255, 63, 0.18);
+  backdrop-filter: blur(18px) saturate(1.5);
+  -webkit-backdrop-filter: blur(18px) saturate(1.5);
 }
 
+.auth-logo .brand-mark::before,
 .brand-mark::before {
   content: "";
   position: absolute;
-  width: 27px;
-  height: 17px;
-  border: 4px solid var(--green);
-  border-left: 0;
-  border-bottom: 0;
-  border-radius: 0 13px 0 0;
-  transform: rotate(-24deg) translate(-1px, 0);
-  filter: drop-shadow(0 0 10px rgba(216, 255, 63, 0.4));
+  inset: 1px;
+  width: auto;
+  height: auto;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: inherit;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.22), transparent 42%);
+  transform: none;
+  filter: none;
+  pointer-events: none;
 }
 
+.auth-logo .brand-mark::after,
 .brand-mark::after {
   content: "";
   position: absolute;
-  right: 9px;
-  bottom: 9px;
-  width: 8px;
-  height: 8px;
-  border-radius: 999px;
-  background: var(--green);
-  box-shadow: 0 0 13px rgba(216, 255, 63, 0.72);
+  inset: 0;
+  width: auto;
+  height: auto;
+  border-radius: inherit;
+  background:
+    linear-gradient(120deg, rgba(255, 255, 255, 0.28), transparent 30%),
+    linear-gradient(300deg, rgba(255, 255, 255, 0.05), transparent 44%);
+  pointer-events: none;
 }
 
-.brand-mark i,
+.brand-mark i {
+  position: absolute;
+  inset: 4px;
+  z-index: 1;
+  display: block;
+  background: url("./assets/brand-symbol.png") center / contain no-repeat;
+  filter: drop-shadow(0 6px 13px rgba(216, 255, 63, 0.22));
+}
+
 .brand-mark b {
   display: none;
 }
@@ -834,24 +841,26 @@ svg {
   --icon-color: #bfff3e;
   direction: rtl;
   position: relative;
-  min-height: 108px;
+  min-height: 112px;
   overflow: hidden;
   display: grid;
   place-items: center;
-  gap: 8px;
-  padding: 10px 5px 9px;
+  gap: 9px;
+  padding: 12px 6px 10px;
   border: 1px solid var(--tile-border);
-  border-radius: 7px;
+  border-radius: 18px;
   background:
+    radial-gradient(circle at 26% 14%, rgba(255, 255, 255, 0.22), transparent 34%),
+    radial-gradient(circle at 78% 90%, rgba(255, 111, 29, 0.1), transparent 36%),
     linear-gradient(180deg, var(--tile-top), var(--tile-bottom)),
-    radial-gradient(circle at 28% 10%, rgba(216, 255, 63, 0.1), transparent 42%),
-    linear-gradient(145deg, rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.018)),
+    linear-gradient(145deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.018)),
     rgba(24, 23, 34, 0.86);
   color: #fff;
   box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.13),
-    inset 0 -18px 28px rgba(0, 0, 0, 0.24),
-    0 18px 38px rgba(0, 0, 0, 0.34);
+    inset 0 1px 0 rgba(255, 255, 255, 0.24),
+    inset 0 -24px 30px rgba(0, 0, 0, 0.28),
+    0 18px 38px rgba(0, 0, 0, 0.34),
+    0 0 0 1px rgba(255, 255, 255, 0.025);
   backdrop-filter: blur(18px) saturate(1.35);
   -webkit-backdrop-filter: blur(18px) saturate(1.35);
 }
@@ -877,31 +886,40 @@ svg {
   inset: 0;
   pointer-events: none;
   background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.11), transparent 36%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.22), transparent 34%),
     linear-gradient(0deg, rgba(255, 255, 255, 0.025), transparent 52%);
+}
+
+.sport-card::after {
+  content: "";
+  position: absolute;
+  left: 13%;
+  top: 8%;
+  width: 58%;
+  height: 1px;
+  pointer-events: none;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.36);
+  box-shadow: 0 0 18px rgba(255, 255, 255, 0.14);
 }
 
 .sport-icon {
   position: relative;
   z-index: 1;
-  width: 48px;
-  height: 43px;
+  width: 50px;
+  height: 50px;
   display: grid;
   place-items: center;
-  border: 0;
-  border-radius: 0;
-  background: transparent;
-  box-shadow: none;
-  backdrop-filter: none;
-  -webkit-backdrop-filter: none;
 }
 
 .sport-icon svg {
-  width: 39px;
-  height: 39px;
+  width: 38px;
+  height: 38px;
   color: var(--icon-color);
-  stroke-width: 2.35;
-  filter: drop-shadow(0 8px 12px rgba(0, 0, 0, 0.36));
+  stroke-width: 2.45;
+  filter:
+    drop-shadow(0 0 10px rgba(216, 255, 63, 0.34))
+    drop-shadow(0 8px 12px rgba(0, 0, 0, 0.35));
 }
 
 .sport-card.active .sport-icon {
@@ -1296,14 +1314,15 @@ svg {
   width: 32px;
   height: 32px;
   padding: 6px;
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  border-radius: 7px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 10px;
   background:
-    linear-gradient(145deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.035)),
-    rgba(31, 30, 44, 0.74);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.18), 0 8px 18px rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(14px) saturate(1.25);
-  -webkit-backdrop-filter: blur(14px) saturate(1.25);
+    radial-gradient(circle at 28% 14%, rgba(255, 255, 255, 0.24), transparent 36%),
+    linear-gradient(145deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.04)),
+    rgba(31, 30, 44, 0.78);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.24), 0 8px 18px rgba(0, 0, 0, 0.24);
+  backdrop-filter: blur(16px) saturate(1.35);
+  -webkit-backdrop-filter: blur(16px) saturate(1.35);
 }
 
 .bottom-nav .active {

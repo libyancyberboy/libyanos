@@ -11,7 +11,7 @@ workflows:
         distribution_type: ad_hoc
         bundle_identifier: ly.alabli.app
       vars:
-        PROJECT_DIR: "arenaly/apps/alabli-ios-build"
+        PROJECT_DIR: "apps/alabli-ios-build"
         XCODE_WORKSPACE: "ios/App/App.xcworkspace"
         XCODE_SCHEME: "App"
     scripts:
@@ -19,7 +19,7 @@ workflows:
         script: |
           test -f "$PROJECT_DIR/package.json" || {
             echo "Alabli iOS project was not found at $PROJECT_DIR"
-            echo "Make sure Codemagic is using codemagic.yaml from the repository root."
+            echo "Make sure Codemagic is using codemagic.yaml from the ArenaLY folder."
             find . -maxdepth 3 -type f | sort | head -120
             exit 1
           }
@@ -49,7 +49,7 @@ workflows:
             --scheme "$XCODE_SCHEME"
     artifacts:
       - "**/*.ipa"
-      - "arenaly/apps/alabli-ios-build/ios/App/build/**/*.xcarchive"
+      - "apps/alabli-ios-build/ios/App/build/**/*.xcarchive"
       - "/tmp/xcodebuild_logs/*.log"
 
   default-workflow:
@@ -64,7 +64,7 @@ workflows:
         distribution_type: ad_hoc
         bundle_identifier: ly.alabli.app
       vars:
-        PROJECT_DIR: "arenaly/apps/alabli-ios-build"
+        PROJECT_DIR: "apps/alabli-ios-build"
         XCODE_WORKSPACE: "ios/App/App.xcworkspace"
         XCODE_SCHEME: "App"
     scripts:
@@ -72,7 +72,7 @@ workflows:
         script: |
           test -f "$PROJECT_DIR/package.json" || {
             echo "Alabli iOS project was not found at $PROJECT_DIR"
-            echo "Make sure Codemagic is using codemagic.yaml from the repository root."
+            echo "Make sure Codemagic is using codemagic.yaml from the ArenaLY folder."
             find . -maxdepth 3 -type f | sort | head -120
             exit 1
           }
@@ -102,5 +102,5 @@ workflows:
             --scheme "$XCODE_SCHEME"
     artifacts:
       - "**/*.ipa"
-      - "arenaly/apps/alabli-ios-build/ios/App/build/**/*.xcarchive"
+      - "apps/alabli-ios-build/ios/App/build/**/*.xcarchive"
       - "/tmp/xcodebuild_logs/*.log"
